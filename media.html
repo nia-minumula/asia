@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Database — Field Notes: Asian American Studies, Chicagoland</title>
+<meta name="description" content="A searchable database of books, films, shows, and music by Asian American creators and scholars, tagged by ethnicity, language, and genre.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">亜</span>
+      <span class="brand-text">Field Notes
+        <span>Asian American Studies · Chicagoland</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="mainnav" aria-label="Primary">
+      <a href="index.html">Start Here</a>
+      <a href="events.html">Events</a>
+      <a href="map.html">Map</a>
+      <a href="media.html" class="active">Media Database</a>
+      <a href="colleges.html">College Spotlight</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">03 / Library</p>
+    <h1 class="page-title">Books, film, TV, and music worth starting with.</h1>
+    <p class="lede">A mix of scholarship by professors in the field and creative work by Asian American writers, directors, and musicians. Search or filter by ethnicity, language, or genre to build your own reading and watch list.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+
+    <div class="media-controls">
+      <div class="control-group">
+        <label for="search-input">Search</label>
+        <input type="search" id="search-input" placeholder="Title, creator, keyword…">
+      </div>
+      <div class="control-group">
+        <label for="filter-ethnicity">Ethnicity / diaspora</label>
+        <select id="filter-ethnicity">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="filter-language">Language</label>
+        <select id="filter-language">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="filter-genre">Genre / format</label>
+        <select id="filter-genre">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="filter-type">Source</label>
+        <select id="filter-type">
+          <option value="all">All</option>
+          <option value="professor">By a professor</option>
+          <option value="creative">Creative work</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="results-count" id="results-count"></p>
+
+    <div class="media-grid" id="media-grid">
+
+      <article class="media-card" data-title="the making of asian america erika lee" data-ethnicity="Pan-Asian American" data-language="English" data-genre="History" data-type="professor">
+        <span class="media-kind">Book · History</span>
+        <h3>The Making of Asian America: A History</h3>
+        <p class="media-creator">Erika Lee — professor, University of Minnesota</p>
+        <p class="media-desc">A sweeping history of Asian immigration to the U.S. from the 1800s to the present, often used as an entry-level text in intro courses.</p>
+        <div class="media-tags"><span class="tagpill">Pan-Asian American</span><span class="tagpill">English</span><span class="tagpill">By a professor</span></div>
+      </article>
+
+      <article class="media-card" data-title="minor feelings cathy park hong" data-ethnicity="Korean American" data-language="English" data-genre="Essay" data-type="professor">
+        <span class="media-kind">Book · Essay Collection</span>
+        <h3>Minor Feelings: An Asian American Reckoning</h3>
+        <p class="media-creator">Cathy Park Hong — poet &amp; professor, Rutgers–Newark</p>
+        <p class="media-desc">A collection of essays on race, art, and the emotional interior of growing up Korean American, blending memoir and criticism.</p>
+        <div class="media-tags"><span class="tagpill">Korean American</span><span class="tagpill">English</span><span class="tagpill">By a professor</span></div>
+      </article>
+
+      <article class="media-card" data-title="strangers from a different shore ronald takaki" data-ethnicity="Pan-Asian American" data-language="English" data-genre="History" data-type="professor">
+        <span class="media-kind">Book · History</span>
+        <h3>Strangers from a Different Shore</h3>
+        <p class="media-creator">Ronald Takaki — professor, UC Berkeley</p>
+        <p class="media-desc">A foundational text of the Asian American Studies field, tracing the histories of multiple Asian ethnic groups in the U.S. since the 1800s.</p>
+        <div class="media-tags"><span class="tagpill">Pan-Asian American</span><span class="tagpill">English</span><span class="tagpill">By a professor</span></div>
+      </article>
+
+      <article class="media-card" data-title="marketing dreams manufacturing heroes anna guevarra" data-ethnicity="Filipino American" data-language="English" data-genre="Sociology" data-type="professor">
+        <span class="media-kind">Book · Sociology</span>
+        <h3>Marketing Dreams, Manufacturing Heroes</h3>
+        <p class="media-creator">Anna Guevarra — professor &amp; founding director of Global Asian Studies, UIC</p>
+        <p class="media-desc">A study of the labor brokers and state systems behind the transnational migration of Filipino workers.</p>
+        <div class="media-tags"><span class="tagpill">Filipino American</span><span class="tagpill">English</span><span class="tagpill">By a professor</span></div>
+      </article>
+
+      <article class="media-card" data-title="queering contemporary asian american art laura kina" data-ethnicity="Pan-Asian American" data-language="English" data-genre="Art History" data-type="professor">
+        <span class="media-kind">Book · Art History</span>
+        <h3>Queering Contemporary Asian American Art</h3>
+        <p class="media-creator">Laura Kina (co-editor) — professor of art, media &amp; design, DePaul University</p>
+        <p class="media-desc">An anthology examining queerness, race, and visibility in contemporary Asian American visual art.</p>
+        <div class="media-tags"><span class="tagpill">Pan-Asian American</span><span class="tagpill">English</span><span class="tagpill">By a professor</span></div>
+      </article>
+
+      <article class="media-card" data-title="the sympathizer viet thanh nguyen" data-ethnicity="Vietnamese American" data-language="English" data-genre="Fiction" data-type="creative">
+        <span class="media-kind">Book · Fiction</span>
+        <h3>The Sympathizer</h3>
+        <p class="media-creator">Viet Thanh Nguyen</p>
+        <p class="media-desc">A Pulitzer Prize–winning novel narrated by a communist double agent navigating the Vietnamese refugee community in 1970s Los Angeles.</p>
+        <div class="media-tags"><span class="tagpill">Vietnamese American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="on earth we're briefly gorgeous ocean vuong" data-ethnicity="Vietnamese American" data-language="English" data-genre="Fiction" data-type="creative">
+        <span class="media-kind">Book · Fiction</span>
+        <h3>On Earth We're Briefly Gorgeous</h3>
+        <p class="media-creator">Ocean Vuong</p>
+        <p class="media-desc">A novel in the form of a letter from a son to his mother, moving between Vietnam and a working-class Connecticut town.</p>
+        <div class="media-tags"><span class="tagpill">Vietnamese American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="interior chinatown charles yu" data-ethnicity="Chinese American" data-language="English" data-genre="Fiction" data-type="creative">
+        <span class="media-kind">Book · Fiction</span>
+        <h3>Interior Chinatown</h3>
+        <p class="media-creator">Charles Yu</p>
+        <p class="media-desc">A National Book Award–winning novel written as a screenplay, satirizing the limited roles Asian American actors are cast in.</p>
+        <div class="media-tags"><span class="tagpill">Chinese American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="pachinko min jin lee" data-ethnicity="Korean American" data-language="English" data-genre="Fiction" data-type="creative">
+        <span class="media-kind">Book · Fiction</span>
+        <h3>Pachinko</h3>
+        <p class="media-creator">Min Jin Lee</p>
+        <p class="media-desc">A multigenerational saga following a Korean family across four generations in Japan, later adapted into an Apple TV+ series.</p>
+        <div class="media-tags"><span class="tagpill">Korean American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="the latehomecomer kao kalia yang" data-ethnicity="Hmong American" data-language="English" data-genre="Memoir" data-type="creative">
+        <span class="media-kind">Book · Memoir</span>
+        <h3>The Latehomecomer</h3>
+        <p class="media-creator">Kao Kalia Yang</p>
+        <p class="media-desc">A memoir of a Hmong family's journey from a refugee camp in Thailand to resettlement in the American Midwest.</p>
+        <div class="media-tags"><span class="tagpill">Hmong American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="crying in h mart michelle zauner" data-ethnicity="Korean American" data-language="English" data-genre="Memoir" data-type="creative">
+        <span class="media-kind">Book · Memoir</span>
+        <h3>Crying in H Mart</h3>
+        <p class="media-creator">Michelle Zauner (also known as musician Japanese Breakfast)</p>
+        <p class="media-desc">A memoir about grief, food, and identity, centered on the author's relationship with her mother and Korean American upbringing.</p>
+        <div class="media-tags"><span class="tagpill">Korean American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="everything everywhere all at once daniel kwan" data-ethnicity="Chinese American" data-language="English & Mandarin" data-genre="Film — Sci-Fi/Comedy" data-type="creative">
+        <span class="media-kind">Film</span>
+        <h3>Everything Everywhere All at Once</h3>
+        <p class="media-creator">Directed by Daniel Kwan &amp; Daniel Scheinert</p>
+        <p class="media-desc">A multiverse-hopping comedy centered on a Chinese American laundromat owner, sweeping the major Oscars including Best Picture.</p>
+        <div class="media-tags"><span class="tagpill">Chinese American</span><span class="tagpill">English &amp; Mandarin</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="minari lee isaac chung" data-ethnicity="Korean American" data-language="English & Korean" data-genre="Film — Drama" data-type="creative">
+        <span class="media-kind">Film</span>
+        <h3>Minari</h3>
+        <p class="media-creator">Directed by Lee Isaac Chung</p>
+        <p class="media-desc">A Korean American family tries to build a farm in rural Arkansas in the 1980s, told with quiet, semi-autobiographical detail.</p>
+        <div class="media-tags"><span class="tagpill">Korean American</span><span class="tagpill">English &amp; Korean</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="the farewell lulu wang" data-ethnicity="Chinese American" data-language="English & Mandarin" data-genre="Film — Drama/Comedy" data-type="creative">
+        <span class="media-kind">Film</span>
+        <h3>The Farewell</h3>
+        <p class="media-creator">Directed by Lulu Wang</p>
+        <p class="media-desc">A Chinese American family conceals a grandmother's terminal diagnosis, staging a wedding as an excuse for one last reunion.</p>
+        <div class="media-tags"><span class="tagpill">Chinese American</span><span class="tagpill">English &amp; Mandarin</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="beef lee sung jin" data-ethnicity="Korean American" data-language="English & Korean" data-genre="TV Series" data-type="creative">
+        <span class="media-kind">TV Series</span>
+        <h3>Beef</h3>
+        <p class="media-creator">Created by Lee Sung Jin</p>
+        <p class="media-desc">A road-rage incident spirals into an all-consuming feud between two strangers, unpacking class and immigrant-family pressure along the way.</p>
+        <div class="media-tags"><span class="tagpill">Korean American</span><span class="tagpill">English &amp; Korean</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="fresh off the boat eddie huang" data-ethnicity="Taiwanese American" data-language="English" data-genre="TV Series" data-type="creative">
+        <span class="media-kind">TV Series</span>
+        <h3>Fresh Off the Boat</h3>
+        <p class="media-creator">Based on the memoir by Eddie Huang</p>
+        <p class="media-desc">A Taiwanese American family relocates from D.C.'s Chinatown to Orlando to open a steakhouse, in one of network TV's first Asian American-led sitcoms.</p>
+        <div class="media-tags"><span class="tagpill">Taiwanese American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="japanese breakfast psychopomp jubilee michelle zauner music" data-ethnicity="Korean American" data-language="English" data-genre="Music — Indie Pop" data-type="creative">
+        <span class="media-kind">Music</span>
+        <h3>Japanese Breakfast</h3>
+        <p class="media-creator">Michelle Zauner</p>
+        <p class="media-desc">Indie-pop project blending shoegaze and synth-pop textures, with albums like <em>Psychopomp</em> and <em>Jubilee</em> often tracing grief and identity.</p>
+        <div class="media-tags"><span class="tagpill">Korean American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="mitski be the cowboy laurel hell music" data-ethnicity="Japanese American" data-language="English" data-genre="Music — Indie Rock" data-type="creative">
+        <span class="media-kind">Music</span>
+        <h3>Mitski</h3>
+        <p class="media-creator">Mitski Miyawaki</p>
+        <p class="media-desc">Singer-songwriter known for emotionally direct indie rock records including <em>Be the Cowboy</em> and <em>Laurel Hell</em>.</p>
+        <div class="media-tags"><span class="tagpill">Japanese American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="lyn lapid" data-ethnicity="Filipino American" data-language="English" data-genre="Music — Indie Pop" data-type="creative">
+        <span class="media-kind">Music</span>
+        <h3>Lyn Lapid</h3>
+        <p class="media-creator">Lyn Lapid</p>
+        <p class="media-desc">Singer-songwriter known for her indie pop sound, with albums such as <em>to love in the 21st century</em> and <em>BUZZKILL</em>.</p>
+        <div class="media-tags"><span class="tagpill">Filipino American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+      <article class="media-card" data-title="south asian american history devon avenue documentary" data-ethnicity="South Asian American" data-language="English" data-genre="Film — Documentary" data-type="creative">
+        <span class="media-kind">Film · Documentary</span>
+        <h3>Community-produced Devon Avenue oral histories</h3>
+        <p class="media-creator">Various — Indo-American Heritage Museum archive</p>
+        <p class="media-desc">Short documentary and oral-history projects archiving the growth of Devon Avenue's South Asian business district since the 1980s.</p>
+        <div class="media-tags"><span class="tagpill">South Asian American</span><span class="tagpill">English</span><span class="tagpill">Creative work</span></div>
+      </article>
+
+    </div>
+
+    <p class="empty-state" id="empty-state">Nothing matches those filters. Try clearing one and searching again.</p>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <div>
+      <p><strong style="color:var(--paper); font-family:var(--font-display); font-size:16px;">Field Notes</strong></p>
+      <p>A starting list, not a canon — availability varies by library and streaming service. Suggestions for the database are always welcome from students and instructors.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="index.html">Start Here</a>
+      <a href="events.html">Events</a>
+      <a href="map.html">Map</a>
+      <a href="media.html">Media Database</a>
+      <a href="colleges.html">College Spotlight</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.media-card'));
+  var searchInput = document.getElementById('search-input');
+  var selEthnicity = document.getElementById('filter-ethnicity');
+  var selLanguage = document.getElementById('filter-language');
+  var selGenre = document.getElementById('filter-genre');
+  var selType = document.getElementById('filter-type');
+  var resultsCount = document.getElementById('results-count');
+  var emptyState = document.getElementById('empty-state');
+
+  function populate(select, values){
+    var unique = Array.from(new Set(values)).sort();
+    unique.forEach(function(v){
+      var opt = document.createElement('option');
+      opt.value = v;
+      opt.textContent = v;
+      select.appendChild(opt);
+    });
+  }
+
+  populate(selEthnicity, cards.map(function(c){ return c.dataset.ethnicity; }));
+  populate(selLanguage, cards.map(function(c){ return c.dataset.language; }));
+  populate(selGenre, cards.map(function(c){ return c.dataset.genre; }));
+
+  function applyFilters(){
+    var q = searchInput.value.trim().toLowerCase();
+    var eth = selEthnicity.value;
+    var lang = selLanguage.value;
+    var genre = selGenre.value;
+    var type = selType.value;
+    var visibleCount = 0;
+
+    cards.forEach(function(card){
+      var matchesSearch = !q || card.dataset.title.indexOf(q) !== -1;
+      var matchesEth = eth === 'all' || card.dataset.ethnicity === eth;
+      var matchesLang = lang === 'all' || card.dataset.language === lang;
+      var matchesGenre = genre === 'all' || card.dataset.genre === genre;
+      var matchesType = type === 'all' || card.dataset.type === type;
+      var visible = matchesSearch && matchesEth && matchesLang && matchesGenre && matchesType;
+      card.hidden = !visible;
+      if(visible) visibleCount++;
+    });
+
+    resultsCount.textContent = visibleCount + (visibleCount === 1 ? ' entry' : ' entries') + ' shown';
+    emptyState.classList.toggle('show', visibleCount === 0);
+  }
+
+  [searchInput, selEthnicity, selLanguage, selGenre, selType].forEach(function(el){
+    el.addEventListener('input', applyFilters);
+    el.addEventListener('change', applyFilters);
+  });
+
+  applyFilters();
+})();
+</script>
+</body>
+</html>

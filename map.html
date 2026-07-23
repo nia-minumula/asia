@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map — Field Notes: Asian American Studies, Chicagoland</title>
+<meta name="description" content="A map of Asian American cultural centers, Chicago's Chinatowns, and the Devon Avenue corridor.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">亜</span>
+      <span class="brand-text">Field Notes
+        <span>Asian American Studies · Chicagoland</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="mainnav" aria-label="Primary">
+      <a href="index.html">Start Here</a>
+      <a href="events.html">Events</a>
+      <a href="map.html" class="active">Map</a>
+      <a href="media.html">Media Database</a>
+      <a href="colleges.html">College Spotlight</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">02 / Geography</p>
+    <h1 class="page-title">Where the community actually is.</h1>
+    <p class="lede">Three layers you can toggle on and off: cultural centers and museums, the city's Chinatown neighborhoods, and the Devon Avenue corridor. Markers are placed for orientation — always confirm an exact address before visiting.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="map-layout">
+
+      <aside class="map-legend">
+        <div class="legend-group">
+          <button class="legend-toggle" data-layer="centers">
+            <span class="legend-dot dot-centers"></span> Cultural Centers
+          </button>
+          <ul class="legend-list">
+            <li><span class="place-name">Chinese American Museum of Chicago</span><span class="place-desc">Exhibits on Chinese American life in the Midwest</span></li>
+            <li><span class="place-name">Heritage Museum of Asian Art</span><span class="place-desc">Pan-Asian art collection, Chinatown</span></li>
+            <li><span class="place-name">Japanese American Service Committee</span><span class="place-desc">Community &amp; cultural center, Uptown</span></li>
+            <li><span class="place-name">Indo-American Center</span><span class="place-desc">South Asian social services &amp; culture, West Ridge</span></li>
+            <li><span class="place-name">Indo-American Heritage Museum</span><span class="place-desc">South Asian American history, Devon corridor</span></li>
+            <li><span class="place-name">Midwest Buddhist Temple</span><span class="place-desc">Site of the annual Ginza Holiday Festival</span></li>
+          </ul>
+        </div>
+
+        <div class="legend-group">
+          <button class="legend-toggle" data-layer="chinatown">
+            <span class="legend-dot dot-chinatown"></span> Chinatowns
+          </button>
+          <ul class="legend-list">
+            <li><span class="place-name">Chinatown (Near South Side)</span><span class="place-desc">Anchored since the early 1900s, along Wentworth Ave</span></li>
+            <li><span class="place-name">Chinatown Square</span><span class="place-desc">Shopping plaza &amp; zodiac statues</span></li>
+            <li><span class="place-name">Asia on Argyle / "New Chinatown"</span><span class="place-desc">Pan-Asian &amp; Vietnamese corridor, Uptown</span></li>
+          </ul>
+        </div>
+
+        <div class="legend-group">
+          <button class="legend-toggle" data-layer="devon">
+            <span class="legend-dot dot-devon"></span> Devon-Adjacent
+          </button>
+          <ul class="legend-list">
+            <li><span class="place-name">Devon Avenue corridor</span><span class="place-desc">South Asian restaurants &amp; shops, West Ridge</span></li>
+            <li><span class="place-name">Hamdard Center</span><span class="place-desc">South Asian &amp; Muslim community services</span></li>
+            <li><span class="place-name">West Ridge / Rogers Park edge</span><span class="place-desc">Overlapping South Asian &amp; East African communities</span></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div id="map" role="application" aria-label="Map of Asian American cultural sites in Chicago"></div>
+    </div>
+
+    <p class="section-note" style="margin-top:16px;">Map data © OpenStreetMap contributors. Marker placement is approximate and meant for orientation, not navigation.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <div>
+      <p><strong style="color:var(--paper); font-family:var(--font-display); font-size:16px;">Field Notes</strong></p>
+      <p>These neighborhoods are living communities, not exhibits. Visit like a guest: support local businesses, and be mindful during religious or cultural events.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="index.html">Start Here</a>
+      <a href="events.html">Events</a>
+      <a href="map.html">Map</a>
+      <a href="media.html">Media Database</a>
+      <a href="colleges.html">College Spotlight</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="script.js"></script>
+<script>
+(function(){
+  var map = L.map('map', { scrollWheelZoom:false }).setView([41.915, -87.660], 11);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  function makeIcon(color){
+    return L.divIcon({
+      className: '',
+      html: '<div style="width:16px;height:16px;border-radius:50%;background:'+color+';border:2px solid #F3EEDF;box-shadow:0 1px 4px rgba(0,0,0,0.4);"></div>',
+      iconSize: [16,16],
+      iconAnchor: [8,8]
+    });
+  }
+
+  var colors = { centers:'#3D6B57', chinatown:'#9E2E28', devon:'#E3A63D' };
+
+  var centers = L.layerGroup([
+    L.marker([41.8532, -87.6318], {icon:makeIcon(colors.centers)}).bindPopup('<strong>Chinese American Museum of Chicago</strong><br>238 W 23rd St · Exhibits on Chinese American life in the Midwest'),
+    L.marker([41.8497, -87.6323], {icon:makeIcon(colors.centers)}).bindPopup('<strong>Heritage Museum of Asian Art</strong><br>Chinatown · Pan-Asian art collection'),
+    L.marker([41.9636, -87.6584], {icon:makeIcon(colors.centers)}).bindPopup('<strong>Japanese American Service Committee</strong><br>Clark St, Uptown · Community &amp; cultural center'),
+    L.marker([41.9975, -87.6978], {icon:makeIcon(colors.centers)}).bindPopup('<strong>Indo-American Center</strong><br>West Ridge · South Asian social services &amp; culture'),
+    L.marker([41.9982, -87.6890], {icon:makeIcon(colors.centers)}).bindPopup('<strong>Indo-American Heritage Museum</strong><br>Devon corridor · South Asian American history'),
+    L.marker([41.9145, -87.6389], {icon:makeIcon(colors.centers)}).bindPopup('<strong>Midwest Buddhist Temple</strong><br>Old Town · Site of the annual Ginza Holiday Festival')
+  ]).addTo(map);
+
+  var chinatown = L.layerGroup([
+    L.marker([41.8517, -87.6329], {icon:makeIcon(colors.chinatown)}).bindPopup('<strong>Chinatown Gate</strong><br>Wentworth Ave &amp; Cermak Rd · Anchored since the early 1900s'),
+    L.marker([41.8567, -87.6328], {icon:makeIcon(colors.chinatown)}).bindPopup('<strong>Chinatown Square</strong><br>Shopping plaza &amp; zodiac statues'),
+    L.marker([41.9733, -87.6592], {icon:makeIcon(colors.chinatown)}).bindPopup('<strong>Asia on Argyle / "New Chinatown"</strong><br>Uptown · Pan-Asian &amp; Vietnamese commercial corridor')
+  ]).addTo(map);
+
+  var devon = L.layerGroup([
+    L.marker([41.9986, -87.6893], {icon:makeIcon(colors.devon)}).bindPopup('<strong>Devon Avenue corridor</strong><br>West Ridge · South Asian restaurants &amp; shops'),
+    L.marker([41.9976, -87.6698], {icon:makeIcon(colors.devon)}).bindPopup('<strong>Hamdard Center</strong><br>Devon Ave · South Asian &amp; Muslim community services'),
+    L.marker([42.0089, -87.6714], {icon:makeIcon(colors.devon)}).bindPopup('<strong>West Ridge / Rogers Park edge</strong><br>Overlapping South Asian &amp; East African communities')
+  ]).addTo(map);
+
+  var layers = { centers: centers, chinatown: chinatown, devon: devon };
+
+  document.querySelectorAll('.legend-toggle').forEach(function(btn){
+    btn.setAttribute('aria-pressed', 'true');
+    btn.style.opacity = '1';
+    btn.addEventListener('click', function(){
+      var key = btn.getAttribute('data-layer');
+      var layer = layers[key];
+      if(map.hasLayer(layer)){
+        map.removeLayer(layer);
+        btn.style.opacity = '0.45';
+        btn.setAttribute('aria-pressed', 'false');
+      } else {
+        map.addLayer(layer);
+        btn.style.opacity = '1';
+        btn.setAttribute('aria-pressed', 'true');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
